@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Tensor, InferenceSession } from "onnxruntime-web";
 import Loader from "./components/loader";
+import Streamer from "./components/streaming";
 import { detectImage } from "./utils/detect";
 import "./style/App.css";
 
@@ -45,6 +46,7 @@ const App = () => {
   return (
     <div className="App">
       {loading && <Loader>{loading}</Loader>}
+      {<Streamer></Streamer>}
       <div className="header">
         <h1>YOLOv5 Object Detection App</h1>
         <p>
@@ -100,6 +102,7 @@ const App = () => {
           setImage(url);
         }}
       />
+      
       <div className="btn-container">
         <button
           onClick={() => {
