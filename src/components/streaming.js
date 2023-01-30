@@ -2,6 +2,8 @@ import React from "react";
 
 const Streamer = (props) => {
 
+    let imageRef = props.props.imageRef
+    let loadfn = props.props.loadfn
     let socket = {}
 
     const contactServer = () => {
@@ -19,18 +21,19 @@ const Streamer = (props) => {
         // Load image
         socket.addEventListener('message', function (event) {
             console.log(event.data);
-            document.getElementById("ItemPreview").src = URL.createObjectURL(event.data);
+            const url = URL.createObjectURL(event.data)
+            imageRef.current.src = url
+            loadfn(url)
         })
     
     }
 
     return ( 
-        <div className="wrapper" {...props}>
-            <label htmlFor="ip">Server Local IP:</label>
-            <input type="text" id="ip" name="ip"/><br></br>
+        <>
+            <label htmlFor="ip">Server Local IP:  </label>
+            <input type="text" id="ip" name="ip"/>
             <button onClick={contactServer}>Connect</button><br></br>
-            <img id="ItemPreview" src=""/>
-        </div>
+        </>
     )
 }
 

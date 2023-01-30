@@ -40,15 +40,15 @@
     ]
   },
   "author": {
-    "name": "Wahyu Setianto",
-    "url": "https://github.com/Hyuto"
+    "name": "Sebastian Gomez",
+    "url": "https://github.com/pickles976"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hyuto/yolov5-onnxruntime-web.git"
+    "url": "git+https://github.com/pickles976/yolov5-onnxruntime-websockets"
   },
   "bugs": {
-    "url": "https://github.com/Hyuto/yolov5-onnxruntime-web/issues"
+    "url": "https://github.com/pickles976/yolov5-onnxruntime-websockets/issues"
   }
 }

@@ -1,5 +1,9 @@
 # YOLOv5 on Browser with onnxruntime-web
 
+Forked from: https://github.com/Hyuto/yolov5-onnxruntime-web.git
+
+Connects to websocket server streaming mjpeg or other image stream. Performs realtime inference on those images.
+
 <p align="center">
   <img src="./sample.png" />
 </p>
@@ -14,10 +18,28 @@
 Object Detection application right in your browser.
 Serving YOLOv5 in browser using onnxruntime-web with `wasm` backend.
 
-## Setup
+## Server Setup
+
+connect to your raspberry pi via ssh and copy the picam.py script.
+
+Install the required packages
+```bash
+sudo apt-get install python-opencv
+pip install websockets
+pip install picam[array]
+```
+
+Run the script
+```bash
+python3 picam.py
+```
+
+Your single-threaded websockets server will now be available at your pi's local ip at port 8000
+
+## Client Setup
 
 ```bash
-git clone https://github.com/Hyuto/yolov5-onnxruntime-web.git
+git clone https://github.com/pickles976/yolov5-onnxruntime-websockets.git
 cd yolov5-onnxruntime-web
 yarn install # Install dependencies
 ```
@@ -28,6 +50,10 @@ yarn install # Install dependencies
 yarn start # Start dev server
 yarn build # Build for productions
 ```
+
+## Connecting to Pi
+
+Enter your pi's ip in the field and click connect.
 
 ## Model
 
